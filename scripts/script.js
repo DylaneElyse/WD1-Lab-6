@@ -13,6 +13,7 @@ You are encouraged to use the provided naming convention for ease of review.
 
 let modelName = document.getElementById("model-text").innerHTML;
 let duration = document.getElementById("duration-text").innerHTML;
+let modelButton = document.getElementById("model-button");
 
 /****************** helper function ******************/
 /* create a function called recalculate() which will
@@ -49,13 +50,9 @@ function recalculate(modelName, duration) {
     - if modelName is currently "CPRG", change the value of modelName to "XYZ", and change the innerHTML of the model-text span element to "Model XYZ"
     - then, recalculate() the total cost.
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
-// modelButton.addEventListener("click", changeModel);
+modelButton.addEventListener("click", changeModel);
 
 // INSERT YOUR CODE HERE
-
-let modelButton = document.getElementById("model-button");
-
-modelButton.addEventListener("click", changeModel);
 
 function changeModel() {
   let modelText = document.getElementById("model-text");
@@ -66,7 +63,6 @@ function changeModel() {
     modelName = "XYZ";
     modelText.innerHTML = "Model XYZ";
   }
-  duration = parseInt(duration);
   recalculate(modelName, duration);
   return modelName;
 }
